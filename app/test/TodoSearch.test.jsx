@@ -23,7 +23,6 @@ describe('TodoSearch',()=>{
 	});
 
 	it('should call onSearch with proper checked value',()=>{
-		var searchText = '';
 		var spy = expect.createSpy();
 		var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy}/>);
 		todoSearch.refs.showCompleted.checked = true;
@@ -31,7 +30,6 @@ describe('TodoSearch',()=>{
 		TestUtils.Simulate.change(todoSearch.refs.showCompleted);
 
 		expect(spy).toHaveBeenCalledWith(true, '');
-
 
 	})
 });
